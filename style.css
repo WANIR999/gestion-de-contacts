@@ -1,0 +1,194 @@
+body{
+   background: #d5def5;  
+}
+#barnav, #footer{
+    background:#22313f;
+}
+#hellzone , #login , #signup , #welcm , #creat {
+   background: #e7eaf6;
+   border-radius:50px 5px ;
+   box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.034),0 6.7px 5.3px rgba(0, 0, 0, 0.048),0 12.5px 10px rgba(0, 0, 0, 0.06),0 22.3px 17.9px rgba(0, 0, 0, 0.072),0 41.8px 33.4px rgba(0, 0, 0, 0.086),0 100px 80px rgba(0, 0, 0, 0.12);
+}
+input , #btn , #btnaddcntct{
+    border-radius: 10px;
+    border-style: none;
+    height: 40px;
+    width: 100%;
+}
+a{
+    text-decoration: none;
+}
+ul li{
+    list-style: none;
+}
+::-webkit-scrollbar{
+    width: 1px;
+}
+@media screen and (max-width:500px) {
+    body{
+        width: 100% !important;
+        height: 100% !important;
+    }
+   .zoner {
+       flex-direction: column !important;
+   }
+   .hell{
+       width: 100% !important;
+   }
+   .rn{
+       display: none;
+   }
+   .add{
+       display: block !important;
+       z-index: 1;
+   }
+   #menu{
+     display: flex !important;
+     flex-direction: column !important;
+     width: 200px !important;
+     z-index: 1;
+     background-color: #22313fd2;
+     position: absolute;
+     top: -1000px;
+     right: 10px;
+     border-radius: 40px 1px !important;
+   
+    }
+    #check:checked + #menu
+    {
+     top: 51px;
+    }
+   .fns{
+       font-size: 12px !important;
+   }
+  .revrs{
+     flex-direction: column-reverse !important;
+  }
+}
+@media screen and (min-width:501px) and (max-width:800px) {
+    body{
+        width: 100% !important;
+    }
+   .reform{
+    flex-direction: column !important;
+   }
+   .evol{
+      width: 100% !important;
+   }
+   .circl{
+       border-radius: 50%;
+       margin-top: 15%;
+   }
+   .half{
+       width: 50% !important;
+   }
+   .mrg{
+    margin-top: 10px !important;
+   }
+   .rev{
+       flex-direction: column-reverse;
+   }
+   .remove{
+       display: none;
+   }
+   .add{
+    display: block !important;
+    z-index: 1;
+}
+#menu{
+  display: flex !important;
+  flex-direction: column !important;
+  width: 200px !important;
+  z-index: 1;
+  background-color: #22313fd2;
+  position: absolute;
+  top: -1000px;
+  right: 10px;
+  border-radius: 40px 1px !important;
+
+ }
+ #check:checked + #menu
+ {
+  top: 51px;
+ }
+}
+@media screen and (min-width:801px) and (max-width:950px) {
+    body{
+        width: 100% !important;
+    }
+    .fmin{
+        font-size: 8px !important;
+        width: 40% !important;
+    }
+   
+   .fnt{
+       font-size: 50px !important;
+   }
+   .minfs{
+       font-size: 10px !important;
+   }
+   .menu{
+       flex-direction: column !important;
+       
+   }
+   .add{
+    display: block !important;
+    z-index: 1;
+}
+#menu{
+  display: flex !important;
+  flex-direction: column !important;
+  width: 200px !important;
+  z-index: 1;
+  background-color: #22313fd2;
+  position: absolute;
+  top: -1000px;
+  right: 10px;
+  border-radius: 40px 1px !important;
+
+ }
+ #check:checked + #menu
+ {
+  top: 51px;
+ }
+}
+@media screen and (min-width:950px) and (max-width:1158px) {
+    body{
+    width: 100% !important;
+    }
+   .fnt11{
+    font-size: 65px !important;
+   }
+   .minfs11{
+    font-size: 18px !important;
+   }
+   .add{
+    display: block !important;
+    z-index: 1;
+}
+#menu{
+  display: flex !important;
+  flex-direction: column !important;
+  width: 300px !important;
+  z-index: 1;
+  background-color: #22313fd2;
+  position: absolute;
+  top: -1000px;
+  right: 10px;
+  border-radius: 40px 1px !important;
+
+ }
+ #check:checked + #menu
+ {
+  top: 51px;
+ }
+}
+/* *********************************classes to for "js"****************************************** */
+.none{
+    display: none !important;
+}
+.show{
+    display: flex !important;
+}
+
+
