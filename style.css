@@ -184,11 +184,9 @@ ul li{
  }
 }
 /* *********************************classes to for "js"****************************************** */
-.none{
-    display: none !important;
-}
-.show{
-    display: flex !important;
+.alert{
+    color:red;
+    font-size:10px;
 }
 
 

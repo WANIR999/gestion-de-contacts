@@ -1,11 +1,28 @@
  <!-- ********barnav************** -->
-<?php
- include 'navbar.php';
-?>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+ <!-- *****************************barnav****************************************************** -->
+ <div id="barnav" class="container-fluid w-100 d-flex" style=" height: 50px; justify-content: space-between; align-items: center;">
+         <h5 class="text-white menu">Contact List</h5>
+            <a href="signform.php" class="btn text-white minfs11">Login</a>
+    </div>
  <!-- *****************************signup form******************************* --> 
  <div id="login"  class="container-fluid mt-5 mb-5 d-flex zoner reform" style=" width:95%; justify-content: space-between; border-left: solid #5fc9f3 10px;  ">
       <form action="#" method="POST" class="container-fluid d-flex mt-5 hell evol mrg" style=" order: 2; width: 30%; flex-direction: column; row-gap: 10px;" >
       <h2 class="text-muted text-center">Sign-up</h2>
+      <?php if(isset($_GET['signup'])){ ?><div class="alert alert-danger" role="alert"><?= $_GET['signup']; ?></div><?php }?>
+      <?php if(isset($_GET['signin'])){ ?><div class="alert alert-success" role="alert"><?= $_GET['signin']; ?></div><?php }?>
                      <input id="name" type="hidden" name="id" placeholder="   username">
                      <label class="text-muted" for="name">Username</label>
                      <input id="name" type="text" name="name" placeholder="   username">
@@ -21,25 +38,17 @@
              </div>
  <!-- *********** footer***************** -->          
       <?php
-        include 'footer.php';
-    ?>
-
- <?php
-    require_once "user.php";
-    $user= new user();
-   if(isset($_POST["signup"])){
-    $id = $_POST["id"];
-    $name = $_POST["name"];
-     if($_post["password"]==$_post["passwordv"]){$pass =hash('sha256', $_POST["password"]);}
-    $date=date("D, d M Y H:i:s");
-    $table="users";
-
-    if (!empty($name) && !empty($pass)) {
-            if ($user->searchByName($name,$table) > 0) {
-                header('location:signin.php?error= email existe already ');
-              } else {
-                    $user->addUser($id,$name,$pass,$date,$table);
-                    }
+        require_once './classes/user.php';
+          if(isset($_POST['signup'])){
+              $user= new user();
+              $user->SignFormAlerts($_POST['name'],$_POST['password'],$_POST['passwordv']);
+            if(!empty($_POST['name'])&& !empty($_POST['password'])){
+                if($_POST['password']==$_POST['passwordv']){
+                        $user->addUsers($_POST['name'],password_hash($_POST['password'], PASSWORD_DEFAULT));
+                        header('location:signform.php');
+                   }
                 }
             }
-?>
+        require_once 'footer.php';
+        ?>
+    
